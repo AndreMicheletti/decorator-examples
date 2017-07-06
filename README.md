@@ -29,7 +29,7 @@ Same as before, but maintaining a history in a `.json` file
 
 Here are the results of the tests in the file end
 
-```
+```Shell
 call to large_function took 1.100401 seconds
 call to large_function took 0.000000 seconds
 a
@@ -38,5 +38,5 @@ d
 ef
 f
 g
-
 ```
+
