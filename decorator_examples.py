@@ -6,6 +6,20 @@ Some decorator usages
 
 """
 
+# Line Profiler
+def line_profiler(f):
+    from line_profiler import LineProfiler
+    import sys
+    def wrap(*args, **kwargs):
+        profile = LineProfiler()
+        profile.add_function(f)
+        profile.enable_by_count()
+        result = f(*args, **kwargs)
+        profile.disable_by_count()
+        profile.print_stats(sys.stdout)
+        return result
+    return wrap
+
 # Require Login
 def require_login(function):
 	def wrap(*args, **kw):
